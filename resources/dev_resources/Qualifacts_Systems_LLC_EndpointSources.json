@@ -1,9 +1,0 @@
-{
-	"Endpoints": [
-		{
-			"URL": "https://cms.smilecdr.com/fhir-request",
-			"OrganizationName": "",
-			"NPIID": ""
-		}
-	]
-}
