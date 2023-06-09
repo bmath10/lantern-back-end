@@ -4,5 +4,11 @@
         "EndpointName":"Lantern",
         "FileName":"LanternEndpointSources.json",
         "URL": ""
+    },
+    {
+        "FormatType": "Lantern",
+        "EndpointName":"SMAEndpointDirectory",
+        "FileName":"SMAEndpointSources.json",
+        "URL": "SMAEndpointDirectory.csv"
     }
 ]

@@ -18,6 +18,7 @@ type LanternEntry struct {
 
 var oneUpURL = "https://1up.health/fhir-endpoint-directory"
 var careEvolutionURL = "https://fhir.docs.careevolution.com/overview/public_endpoints.html"
+var smaEndpointURL = "SMAEndpointDirectory.csv"
 
 func EndpointListWebscraper(vendorURL string, vendor string, fileToWriteTo string) {
 
@@ -25,6 +26,8 @@ func EndpointListWebscraper(vendorURL string, vendor string, fileToWriteTo strin
 		HTMLtablewebscraper(vendorURL, vendor, fileToWriteTo)
 	} else if vendorURL == oneUpURL {
 		OneUpQuerier("https://api.1up.health/connect/system/clinical", fileToWriteTo)
+	} else if vendorURL == smaEndpointURL {
+		SMACSVParser(vendorURL, fileToWriteTo)
 	}
 }
 

@@ -1,0 +1,64 @@
+{
+	"Endpoints": [
+		{
+			"URL": "https://api.alaskafhir.com/r4/metadata",
+			"OrganizationName": "Alaska",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://api.alaskafhir.com/r4/metadata",
+			"OrganizationName": "Alaska",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://api.arkansasfhir.com/r4/metadata",
+			"OrganizationName": "Arkansas",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://api.arkansasfhir.com/r4/metadata",
+			"OrganizationName": "Arkansas",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "In development; expected by 08/30/2023",
+			"OrganizationName": "Colorado",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://api-cdss-prd.safhir.io/v1/api",
+			"OrganizationName": "Connecticut",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://api.delawarefhir.com/r4/metadata",
+			"OrganizationName": "Delaware",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://api.delawarefhir.com/r4/metadata",
+			"OrganizationName": "Delaware",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://hub.floridafx.gov/base/patient/metadata",
+			"OrganizationName": "Florida",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		},
+		{
+			"URL": "https://hub.floridafx.gov/base/providerformulary/metadata",
+			"OrganizationName": "Florida",
+			"NPIID": "",
+			"OrganizationZipCode": ""
+		}
+	]
+}
