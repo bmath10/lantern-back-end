@@ -7,14 +7,8 @@
     },
     {
         "FormatType": "Lantern",
-        "EndpointName":"CareEvolution",
-        "FileName":"CareEvolutionEndpointSources.json",
-        "URL": "https://fhir.docs.careevolution.com/overview/public_endpoints.html"
-    },
-    {
-        "FormatType": "Lantern",
-        "EndpointName": "1Up",
-        "FileName": "1UpEndpointSources.json",
-        "URL": "https://1up.health/fhir-endpoint-directory"
+        "EndpointName":"SMAEndpointDirectory",
+        "FileName":"SMAEndpointSources.json",
+        "URL": "https://raw.githubusercontent.com/smahoney10/EndpointDirectory/main/SMAEndpointDirectory.csv"
     }
 ]
