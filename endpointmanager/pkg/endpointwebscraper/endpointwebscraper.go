@@ -18,7 +18,7 @@ type LanternEntry struct {
 
 var oneUpURL = "https://1up.health/fhir-endpoint-directory"
 var careEvolutionURL = "https://fhir.docs.careevolution.com/overview/public_endpoints.html"
-var smaEndpointURL = "SMAEndpointDirectory.csv"
+var smaEndpointURL = "https://raw.githubusercontent.com/smahoney10/EndpointDirectory/main/SMAEndpointDirectory.csv"
 
 func EndpointListWebscraper(vendorURL string, vendor string, fileToWriteTo string) {
 

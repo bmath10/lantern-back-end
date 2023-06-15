@@ -9,6 +9,6 @@
         "FormatType": "Lantern",
         "EndpointName":"SMAEndpointDirectory",
         "FileName":"SMAEndpointSources.json",
-        "URL": "SMAEndpointDirectory.csv"
+        "URL": "https://raw.githubusercontent.com/smahoney10/EndpointDirectory/main/SMAEndpointDirectory.csv"
     }
 ]

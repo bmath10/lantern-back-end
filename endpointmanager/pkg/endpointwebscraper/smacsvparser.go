@@ -4,10 +4,9 @@ import (
 	"io"
 	"strings"
 
-	//"github.com/onc-healthit/lantern-back-end/endpointmanager/pkg/helpers"
+	"github.com/onc-healthit/lantern-back-end/endpointmanager/pkg/helpers"
 
 	"os"
-	"encoding/csv"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -15,11 +14,10 @@ func SMACSVParser(vendorURL string, fileToWriteTo string) {
 	var lanternEntryList []LanternEntry
 	var endpointEntryList EndpointList
 
-	csvFilePath := "/SMAEndpointDirectory.csv"
+	csvFilePath := "./SMAEndpointDirectory.csv"
 
-	//csvReader, file, err := helpers.QueryAndOpenCSV(vendorURL, csvFilePath, true)
+	csvReader, file, err := helpers.QueryAndOpenCSV(vendorURL, csvFilePath, true)
 
-	csvReader, file, err := OpenCSV(csvFilePath, true)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -60,25 +58,9 @@ func SMACSVParser(vendorURL string, fileToWriteTo string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
 
-func OpenCSV(csvFilePath string, header bool) (*csv.Reader, *os.File, error) {
-	// open file
-	f, err := os.Open("../../../resources/prod_resources" + csvFilePath)
+	err = os.Remove(csvFilePath)
 	if err != nil {
-		return nil, nil, err
+		log.Fatal(err)
 	}
-
-	// read csv values using csv.Reader
-	csvReader := csv.NewReader(f)
-
-	if header {
-		// Read first line to skip over headers
-		_, err = csvReader.Read()
-		if err != nil {
-			return nil, f, err
-		}
-	}
-
-	return csvReader, f, nil
 }
