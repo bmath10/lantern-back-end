@@ -32,26 +32,26 @@ jq -c '.[]' EndpointResourcesList.json | while read endpoint; do
    fi
 done
 
-#Query CHPL endpoint resource list
-echo "Downloading CHPL Endpoint List..."
-URL="https://chpl.healthit.gov/rest/search/v2?api_key=${LANTERN_CHPLAPIKEY}&certificationCriteriaIds=182"
-FILENAME="CHPLEndpointResourcesList.json"
-cd ../../endpointmanager/cmd/CHPLpopulator
-go run main.go $URL $FILENAME
-cd ../../../resources/prod_resources
-echo "done"
+# #Query CHPL endpoint resource list
+# echo "Downloading CHPL Endpoint List..."
+# URL="https://chpl.healthit.gov/rest/search/v2?api_key=${LANTERN_CHPLAPIKEY}&certificationCriteriaIds=182"
+# FILENAME="CHPLEndpointResourcesList.json"
+# cd ../../endpointmanager/cmd/CHPLpopulator
+# go run main.go $URL $FILENAME
+# cd ../../../resources/prod_resources
+# echo "done"
 
-jq -c '.[]' CHPLEndpointResourcesList.json | while read endpoint; do
-   NAME=$(echo $endpoint | jq -c -r '.EndpointName')
-   FILENAME=$(echo $endpoint | jq -c -r '.FileName')
-   URL=$(echo $endpoint | jq -c -r '.URL')
+# jq -c '.[]' CHPLEndpointResourcesList.json | while read endpoint; do
+#    NAME=$(echo $endpoint | jq -c -r '.EndpointName')
+#    FILENAME=$(echo $endpoint | jq -c -r '.FileName')
+#    URL=$(echo $endpoint | jq -c -r '.URL')
 
-   if [ -n "$URL" ];
-   then 
-      cd ../../endpointmanager/cmd/chplendpointquerier
-      echo "Downloading $NAME Endpoint Sources..."
-      go run main.go $URL $FILENAME
-      cd ../../../resources/prod_resources
-      echo "done"
-   fi
-done
+#    if [ -n "$URL" ];
+#    then 
+#       cd ../../endpointmanager/cmd/chplendpointquerier
+#       echo "Downloading $NAME Endpoint Sources..."
+#       go run main.go $URL $FILENAME
+#       cd ../../../resources/prod_resources
+#       echo "done"
+#    fi
+# done

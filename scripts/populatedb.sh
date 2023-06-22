@@ -14,16 +14,16 @@ jq -c '.[]' /etc/lantern/resources/EndpointResourcesList.json | while read endpo
     go run main.go /etc/lantern/resources/$FILENAME $FORMAT $NAME false $LISTURL
 done
 
-jq -c '.[]' /etc/lantern/resources/CHPLEndpointResourcesList.json | while read endpoint; do
-    NAME=$(echo $endpoint | jq -c -r '.EndpointName')
-    FORMAT=$(echo $endpoint | jq -c -r '.FormatType')
-    FILENAME=$(echo $endpoint | jq -c -r '.FileName')
-    LISTURL=$(echo $endpoint | jq -c -r '.URL')
+# jq -c '.[]' /etc/lantern/resources/CHPLEndpointResourcesList.json | while read endpoint; do
+#     NAME=$(echo $endpoint | jq -c -r '.EndpointName')
+#     FORMAT=$(echo $endpoint | jq -c -r '.FormatType')
+#     FILENAME=$(echo $endpoint | jq -c -r '.FileName')
+#     LISTURL=$(echo $endpoint | jq -c -r '.URL')
     
-    if [ -f "/etc/lantern/resources/$FILENAME" ]; then
-        go run main.go /etc/lantern/resources/$FILENAME $FORMAT "${NAME}" true $LISTURL
-    fi
-done
+#     if [ -f "/etc/lantern/resources/$FILENAME" ]; then
+#         go run main.go /etc/lantern/resources/$FILENAME $FORMAT "${NAME}" true $LISTURL
+#     fi
+# done
 
 # Only use the line below that populates the database with CareEvolution for development
 # go run main.go /etc/lantern/resources/CareEvolutionEndpointSources.json CareEvolution
@@ -31,22 +31,22 @@ done
 cd ..
 
 # get CHPL info into db
-cd chplquerier
-go run main.go
-cd ..
+# cd chplquerier
+# go run main.go
+# cd ..
 
-# get NPPES contact (endpoint) pfile into db
-cd nppescontactpopulator
-go run main.go /etc/lantern/resources/endpoint_pfile.csv
-cd ..
+# # get NPPES contact (endpoint) pfile into db
+# cd nppescontactpopulator
+# go run main.go /etc/lantern/resources/endpoint_pfile.csv
+# cd ..
 
 
-# get NPPES org pfile data into db
-cd nppesorgpopulator
-go run main.go /etc/lantern/resources/npidata_pfile.csv
-cd ../endpointlinker
-go run main.go
-cd ..
+# # get NPPES org pfile data into db
+# cd nppesorgpopulator
+# go run main.go /etc/lantern/resources/npidata_pfile.csv
+# cd ../endpointlinker
+# go run main.go
+# cd ..
 
 # run data validation to ensure number of endpoints does not exceed maximum for query interval
 cd datavalidation
